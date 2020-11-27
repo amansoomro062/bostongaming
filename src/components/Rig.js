@@ -4,7 +4,7 @@ import React from 'react';
 const Rig = (props) => {
     return (
 
-        <section className="page-section bg-primary" id="contact">
+        <section className="page-section bg-primary" id="rig">
             <div className="container">
                 <h2 className="page-section-heading text-center text-uppercase text-white mb-0">Design Your Own Rig!</h2>
                 <div className="divider-custom divider-light">
@@ -16,7 +16,7 @@ const Rig = (props) => {
                 <div className="row" >
                     <div className="col-7 text-white">
                         <h3> Pick your gear</h3>
-
+                        {/* This will be a component */}
                         {/* Table code starts here */}
                         <div className="card bg-table">
                             <div className="table-responsive">
@@ -25,6 +25,7 @@ const Rig = (props) => {
                                         <tr>
                                             <th className="table-header">CPU</th>
                                             <td className="float-left">
+                                                {/* this will populated from the backend */}
                                                 <label >
                                                 <input type="radio" id="male" name="gender" value="100"/>
                                                 &nbsp; Core i3-9100F</label>
@@ -228,14 +229,14 @@ const Rig = (props) => {
                                             <td className="table-header-2">CPU</td>
                                             <td className="float-right">
                                                 
-                                               <span class="badge badge-primary">$75</span>
+                                               <span className="badge badge-primary">$75</span>
                                             </td>
                                         </tr>
                                         
                                         <tr className="bottom-border">
                                             <td className="table-header-2">Motherboard</td>
                                             <td className="float-right">
-                                               <span class="badge badge-primary">$70</span>
+                                               <span className="badge badge-primary">$70</span>
                                             </td>
                                         </tr>
                                         
@@ -243,7 +244,7 @@ const Rig = (props) => {
                                             <td className="table-header-2">Memory</td>
                                             <td className="float-right">
                                                 
-                                               <span class="badge badge-primary">$50</span>
+                                               <span className="badge badge-primary">$50</span>
                                             </td>
                                         </tr>
                                         
@@ -251,7 +252,7 @@ const Rig = (props) => {
                                             <td className="table-header-2">Storage</td>
                                             <td className="float-right">
                                                 
-                                               <span class="badge badge-primary">$50</span>
+                                               <span className="badge badge-primary">$50</span>
                                             </td>
                                         </tr>
                                         
@@ -259,7 +260,7 @@ const Rig = (props) => {
                                             <td className="table-header-2">Video card</td>
                                             <td className="float-right">
                                                 
-                                               <span class="badge badge-primary">$150</span>
+                                               <span className="badge badge-primary">$150</span>
                                             </td>
                                         </tr>
                                         
@@ -267,7 +268,7 @@ const Rig = (props) => {
                                             <td className="table-header-2">Case</td>
                                             <td className="float-right">
                                                 
-                                               <span class="badge badge-primary">$45</span>
+                                               <span className="badge badge-primary">$45</span>
                                             </td>
                                         </tr>
                                         
@@ -275,7 +276,7 @@ const Rig = (props) => {
                                             <td className="table-header-2">Power Supply</td>
                                             <td className="float-right">
                                                 
-                                               <span class="badge badge-primary">$70</span>
+                                               <span className="badge badge-primary">$70</span>
                                             </td>
                                         </tr>
                                         
@@ -283,7 +284,7 @@ const Rig = (props) => {
                                             <th className="table-header-2">Total</th>
                                             <td className="float-right">
                                                 
-                                               <span class="badge badge-primary">$510</span>
+                                               <span className="badge badge-primary">$510</span>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -292,15 +293,15 @@ const Rig = (props) => {
                         </div>
                         <br />
                         <h3 className="float-left"> Contact us!</h3>
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-secondary" placeholder="First Name"/>
+                        <div className="input-group">
+                            <input type="text" className="form-control bg-secondary" placeholder="First Name"/>
                         
-                            <span class="input-group-addon">&nbsp;</span>
+                            <span className="input-group-addon">&nbsp;</span>
                         
-                            <input type="text" class="form-control bg-secondary" placeholder="Last Name"/>
+                            <input type="text" className="form-control bg-secondary" placeholder="Last Name"/>
                         </div>
                         
-                        <input type="email" class="form-control bg-secondary contact-input" placeholder="Email"/>
+                        <input type="email" className="form-control bg-secondary contact-input" placeholder="Email"/>
                         
                         <div className="form-group">    
                             <button className="btn btn-primary float-left" id="sendMessageButton" type="submit">Send</button>
