@@ -1,0 +1,16 @@
+//1 - Install bootstrap
+npm install react-bootstrap bootstrap
+
+//2 - Inlude bootstrap
+add bootstrap in the project
+add the following line in App.js
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+//3 intall font awesome
+npm i --save @fortawesome/fontawesome-svg-core
+npm install --save @fortawesome/free-solid-svg-icons
+npm install --save @fortawesome/react-fontawesome
+//additional
+npm install --save @fortawesome/free-brands-svg-icons
+npm install --save @fortawesome/free-regular-svg-icons
+
