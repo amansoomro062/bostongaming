@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect }  from 'react';
+import axios from "axios";
 
 
 const About = (props) => {
+    const [about, setAbout] = useState([]);
+  
+    useEffect(() => {
+      axios.get(`http://localhost:5039/about`).then(res => {
+        const about = res.data;
+        setAbout(about);
+        // console.log(about["content1"]);
+      });
+    }, []);
+
     return (
         <section className="page-section bg-secondary text-white mb-0" id="about">
             <div className="container">
@@ -14,14 +25,18 @@ const About = (props) => {
                 <div className="row">
                     <div className="col-lg-4 ml-auto">
                         <p className="lead">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        {about["content1"]}
                         </p>
                     </div>
-                    <div className="col-lg-4 mr-auto"><p className="lead">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p></div>
+                    <div className="col-lg-4 mr-auto">
+                        <p className="lead">
+                            {about["content2"]}
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>  
         );
     }
     
-    export default About;
+export default About;
