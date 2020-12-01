@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect }  from 'react';
+import axios from "axios";
 
 
 const Footer = (props) => {
+
+    const [footer, setFooter] = useState([]);
+
+    useEffect(() => {
+        axios.get(`http://localhost:5039/footer`).then(res => {
+          const footer = res.data;
+          setFooter(footer);
+        //   console.log(footer["about"]);
+        });
+      }, []);
+
     return (
         <footer className="footer text-center">
             <div className="container">
@@ -9,9 +21,8 @@ const Footer = (props) => {
                     <div className="col-lg-4 mb-5 mb-lg-0">
                         <h4 className="text-uppercase mb-4">Location</h4>
                         <p className="lead mb-0">
-                            Duevej 85
-                            <br />
-                            8500 Grena
+                            {footer["location"]}
+                            {/* hi */}
                         </p>
                     </div>
                     <div className="col-lg-4 mb-5 mb-lg-0">
@@ -24,8 +35,8 @@ const Footer = (props) => {
                     <div className="col-lg-4">
                         <h4 className="text-uppercase mb-4">About Boston Gaming</h4>
                         <p className="lead mb-0">
-                            Boston Gaming is a small newly founded company, driven by the passion
-                            of custom pc builds.
+                            {footer["about"]}
+                            {/* here is about */}
                         </p>
                     </div>
                 </div>

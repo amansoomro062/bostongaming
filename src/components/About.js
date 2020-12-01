@@ -1,15 +1,17 @@
 import React, { useState, useEffect }  from 'react';
+// 
 import axios from "axios";
 
 
 const About = (props) => {
+
     const [about, setAbout] = useState([]);
-  
+    //below
     useEffect(() => {
       axios.get(`http://localhost:5039/about`).then(res => {
         const about = res.data;
         setAbout(about);
-        // console.log(about["content1"]);
+        // console.log(about);
       });
     }, []);
 
@@ -25,11 +27,13 @@ const About = (props) => {
                 <div className="row">
                     <div className="col-lg-4 ml-auto">
                         <p className="lead">
+                        {/* here we will show content 1 */}
                         {about["content1"]}
                         </p>
                     </div>
                     <div className="col-lg-4 mr-auto">
                         <p className="lead">
+                            {/* hree we will show content 2 */}
                             {about["content2"]}
                         </p>
                     </div>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-
-
+//importing to use
 import axios from 'axios';
 
 const api = axios.create({
@@ -9,19 +8,14 @@ const api = axios.create({
 const imageURL = 'http://localhost:5039/images/product/';
 
 class Products extends Component {
-
-    //to store the state
     state = {
         products: []
     }
-
-    //runs when the component is initialized
     constructor() {
         super();
         this.getProducts();
     }
-    //method to get the products
-    getProducts = async () => {
+    getProducts = async () => {        
         try {
             let data = await api.get('/product').then(({ data }) => data);
             this.setState({ products: data })
@@ -29,7 +23,6 @@ class Products extends Component {
             console.log(err);
         }
     }
-    //method to render the view
     render() {
         return (
             <section className="page-section portfolio text-white bg-primary" id="products">
@@ -44,7 +37,7 @@ class Products extends Component {
                     <div className="row">
                     {/* code to dynamically show the table */}
                     {this.state.products.map(product =>
-                        <div className="col-md-6 col-lg-4 mb-5" key={product.id}>
+                        <div className="col-md-6 col-lg-4 mb-5" key={product._id}>
                             <div className="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
                                 <p className="product-text">{product.title}</p>
                                 <div className="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
